@@ -6,7 +6,7 @@
 /*   By: chanjeon <chanjeon@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 22:50:53 by chanjeon          #+#    #+#             */
-/*   Updated: 2022/06/29 06:24:25 by chanjeon         ###   ########.fr       */
+/*   Updated: 2022/06/29 07:32:52 by chanjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include "get_next_line.h"
 
 # define X_EVENT_KEY_PRESS		2
-# define X_EVENT_KEY_RELEASE	3
 # define X_EVENT_KEY_EXIT		17
 
 # define KEY_W		13

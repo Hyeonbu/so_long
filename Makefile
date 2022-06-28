@@ -1,5 +1,6 @@
 NAME		= so_long
 LIBFT_PATH	= ./libft/
+MLX_PATH	= ./mlx/
 LIBFT_LIB	= libft.a
 
 SRCS		= so_long.c \
@@ -16,20 +17,22 @@ FLAGS		= -Wall -Wextra -Werror
 all			:	$(NAME)
 
 $(NAME)		:	$(OBJS)
-		make all -C $(LIBFT_PATH)/
-		gcc -o $(NAME) $(OBJS) -L$(LIBFT_PATH) -lft -L./mlx -lmlx -framework OpenGL -framework AppKit
+		make -C $(LIBFT_PATH)
+		make -C $(MLX_PATH)
+		gcc -o $(NAME) $(OBJS) -L$(LIBFT_PATH) -lft -L$(MLX_PATH) -lmlx -framework OpenGL -framework AppKit
 
 %.o			:	%.c
 		gcc $(FLAGS) -c $^ -I./ -o $@
 
 clean		:
-		rm -f $(OBJS)
 		make clean -C $(LIBFT_PATH)
+		make clean -C $(MLX_PATH)
+		rm -f $(OBJS)
 
 fclean		:	clean
+		make fclean -C $(LIBFT_PATH)
 		rm -f $(NAME)
 		rm -f $(LIBFT_LIB)
-		make fclean -C $(LIBFT_PATH)
 
 re			:	fclean all
 
