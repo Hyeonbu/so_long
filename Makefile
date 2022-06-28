@@ -1,7 +1,7 @@
 NAME		= so_long
 LIBFT_PATH	= ./libft/
 MLX_PATH	= ./mlx/
-LIBFT_LIB	= libft.a
+LIBFT		= libft.a
 
 SRCS		= so_long.c \
 			  set_images.c \
@@ -19,7 +19,7 @@ all			:	$(NAME)
 $(NAME)		:	$(OBJS)
 		make -C $(LIBFT_PATH)
 		make -C $(MLX_PATH)
-		gcc -o $(NAME) $(OBJS) -L$(LIBFT_PATH) -lft -L$(MLX_PATH) -lmlx -framework OpenGL -framework AppKit
+		gcc -o $(NAME) $(OBJS) -I./ -L$(LIBFT_PATH) -lft -L$(MLX_PATH) -lmlx -framework OpenGL -framework AppKit
 
 %.o			:	%.c
 		gcc $(FLAGS) -c $^ -I./ -o $@
@@ -32,7 +32,7 @@ clean		:
 fclean		:	clean
 		make fclean -C $(LIBFT_PATH)
 		rm -f $(NAME)
-		rm -f $(LIBFT_LIB)
+		rm -f $(LIBFT)
 
 re			:	fclean all
 
