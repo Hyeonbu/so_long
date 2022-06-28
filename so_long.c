@@ -6,7 +6,7 @@
 /*   By: chanjeon <chanjeon@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 23:45:44 by chanjeon          #+#    #+#             */
-/*   Updated: 2022/06/29 05:54:41 by chanjeon         ###   ########.fr       */
+/*   Updated: 2022/06/29 08:17:44 by chanjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	exit_game(t_system *sys)
 
 void	error_msg(char *str)
 {
-	write(2, "ERROR\n", 6);
+	write(2, "Error\n", 6);
 	write(2, str, ft_strlen(str));
 	exit(1);
 }
