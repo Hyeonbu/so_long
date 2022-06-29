@@ -6,7 +6,7 @@
 /*   By: chanjeon <chanjeon@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 23:45:44 by chanjeon          #+#    #+#             */
-/*   Updated: 2022/06/29 08:17:44 by chanjeon         ###   ########.fr       */
+/*   Updated: 2022/06/29 09:23:49 by chanjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,9 @@ int	main(int ac, char *av[])
 
 	if (ac != 2)
 		error_msg("Map not found.\n");
-	sys = malloc(sizeof(t_system));
+	sys = (t_system *)malloc(sizeof(t_system));
+	if (sys == NULL)
+		return (0);
 	system_initial(sys, av[1]);
 	mlx_hook(sys->win, X_EVENT_KEY_PRESS, 0, &press_key, sys);
 	mlx_hook(sys->win, X_EVENT_KEY_EXIT, 0, &exit_game, sys);
