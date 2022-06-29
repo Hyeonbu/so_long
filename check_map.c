@@ -6,7 +6,7 @@
 /*   By: chanjeon <chanjeon@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 00:15:28 by chanjeon          #+#    #+#             */
-/*   Updated: 2022/06/29 03:47:14 by chanjeon         ###   ########.fr       */
+/*   Updated: 2022/06/29 12:31:02 by chanjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ void	check_params(t_system *sys)
 		else if (sys->line[i] == 'C')
 			sys->col_num++;
 	}
-	if (cnt_e == 0)
+	if (cnt_e <= 0)
 		error_msg("The Map must have at least one exit.\n");
 	if (cnt_p != 1)
 		error_msg("The Map must have one starting point.\n");
-	if (sys->col_num == 0)
+	if (sys->col_num <= 0)
 		error_msg("The Map must have at lest one collection.\n");
 }
 
