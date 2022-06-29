@@ -6,7 +6,7 @@
 /*   By: chanjeon <chanjeon@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 00:15:28 by chanjeon          #+#    #+#             */
-/*   Updated: 2022/06/29 12:31:02 by chanjeon         ###   ########.fr       */
+/*   Updated: 2022/06/29 14:03:22 by chanjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,7 @@ void	check_params(t_system *sys)
 void	check_map(t_system *sys)
 {
 	if (sys->height * sys->width != ft_strlen(sys->line))
-		error_msg("The Map is not square.\n");
-	check_wall(sys);
-	check_params(sys);
+		error_msg("The Map is not rectangular.\n");
 }
 
 void	read_map(char *file, t_system *sys)
@@ -92,8 +90,11 @@ void	read_map(char *file, t_system *sys)
 	{
 		sys->height++;
 		line = get_next_line(fd);
+		check_map(sys);
 		if (line)
 			sys->line = ft_strjoin(sys->line, line);
 	}
 	close(fd);
+	check_wall(sys);
+	check_params(sys);
 }

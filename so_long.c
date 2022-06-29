@@ -6,7 +6,7 @@
 /*   By: chanjeon <chanjeon@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 23:45:44 by chanjeon          #+#    #+#             */
-/*   Updated: 2022/06/29 09:23:49 by chanjeon         ###   ########.fr       */
+/*   Updated: 2022/06/29 13:55:57 by chanjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	system_initial(t_system *sys, char *map)
 	sys->mlx = mlx_init();
 	sys->image = image_initial(sys->mlx);
 	read_map(map, sys);
-	check_map(sys);
 	sys->win = mlx_new_window(sys->mlx, sys->width * 64, \
 			sys->height * 64, "so_long");
 	set_images(sys);
